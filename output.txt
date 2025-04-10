@@ -1,14 +1,16 @@
-sainag@github:~$ about
+sainag@github:~$ help
 
-[32m                                    ABOUT ME[39m
+[32m                               AVAILABLE COMMANDS[39m
 [90m────────────────────────────────────────────────────────────────────────────────[39m
 
-[37mHello! I'm a backend developer passionate about building efficient,[39m
-[37mscalable server-side applications. My journey in software development[39m
-[37mstarted with a fascination for how systems work behind the scenes.[39m
-
-[37mI enjoy working with databases, APIs, and server architecture. When I'm[39m
-[37mnot coding, you can find me exploring new technologies, contributing to[39m
-[37mopen source, or learning about system design principles.[39m
+[33mhelp       [39m[37mShow this help message[39m
+[33mabout      [39m[37mLearn about me[39m
+[33mskills     [39m[37mView my technical skills[39m
+[33mprojects   [39m[37mBrowse my projects[39m
+[33mexperience [39m[37mSee my work experience[39m
+[33meducation  [39m[37mView my educational background[39m
+[33mcontact    [39m[37mHow to reach me[39m
+[33mclear      [39m[37mClear the terminal[39m
 
 [90m────────────────────────────────────────────────────────────────────────────────[39m
+[90m              Tip: Create an issue with a command name to run it![39m

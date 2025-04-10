@@ -17,20 +17,22 @@
       <!-- Terminal content container -->
       <foreignObject x="20" y="40" width="760" height="450">
         <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace'; font-size: 14px; color: #f8f8f2; white-space: pre; line-height: 1.5;">
-    sainag@github:~$ about
+    sainag@github:~$ help
 
-                                    ABOUT ME
+                               AVAILABLE COMMANDS
 ────────────────────────────────────────────────────────────────────────────────
 
-Hello! I'm a backend developer passionate about building efficient,
-scalable server-side applications. My journey in software development
-started with a fascination for how systems work behind the scenes.
-
-I enjoy working with databases, APIs, and server architecture. When I'm
-not coding, you can find me exploring new technologies, contributing to
-open source, or learning about system design principles.
+help       Show this help message
+about      Learn about me
+skills     View my technical skills
+projects   Browse my projects
+experience See my work experience
+education  View my educational background
+contact    How to reach me
+clear      Clear the terminal
 
 ────────────────────────────────────────────────────────────────────────────────
+              Tip: Create an issue with a command name to run it!
 
 
         </div>
