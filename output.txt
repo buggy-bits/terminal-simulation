@@ -1,0 +1,14 @@
+sainag@github:~$ about
+
+[32m                                    ABOUT ME[39m
+[90m────────────────────────────────────────────────────────────────────────────────[39m
+
+[37mHello! I'm a backend developer passionate about building efficient,[39m
+[37mscalable server-side applications. My journey in software development[39m
+[37mstarted with a fascination for how systems work behind the scenes.[39m
+
+[37mI enjoy working with databases, APIs, and server architecture. When I'm[39m
+[37mnot coding, you can find me exploring new technologies, contributing to[39m
+[37mopen source, or learning about system design principles.[39m
+
+[90m────────────────────────────────────────────────────────────────────────────────[39m

@@ -1,0 +1,66 @@
+name: Update Terminal SVG
+
+on:
+  # Run when someone creates an issue with a command
+  issues:
+    types: [opened]
+  
+  # Allow manual triggering with a command parameter
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Terminal command to run'
+        required: true
+        default: 'help'
+  
+  # Run daily to refresh the terminal
+  schedule:
+    - cron: '0 0 * * *'  # Runs at midnight every day
+
+jobs:
+  update-terminal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Determine command
+        id: command
+        run: |
+          if [ "${{ github.event_name }}" == "issues" ]; then
+            # Extract command from the issue title
+            COMMAND=$(echo "${{ github.event.issue.title }}" | head -n 1)
+            # Close the issue automatically
+            gh issue close ${{ github.event.issue.number }} --comment "Processing command: $COMMAND"
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            # Use command from manual trigger
+            COMMAND="${{ github.event.inputs.command }}"
+          else
+            # Default to help for scheduled runs
+            COMMAND="help"
+          fi
+          echo "command=$COMMAND" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Process command
+        run: node scripts/process-command.js "${{ steps.command.outputs.command }}"
+      
+      - name: Generate SVG
+        run: node scripts/generate-terminal.js
+      
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add terminal.svg
+          git commit -m "Update terminal with command: ${{ steps.command.outputs.command }}"
+          git push

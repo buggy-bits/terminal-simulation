@@ -1,0 +1,17 @@
+{
+    "name": "github-profile-terminal",
+    "version": "1.0.0",
+    "description": "Interactive terminal simulation for GitHub profile",
+    "scripts": {
+        "process": "node scripts/process-command.js",
+        "generate": "node scripts/generate-terminal.js"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "svg-term": "^1.2.1",
+        "svg-term-cli": "^1.2.0",
+        "term.js": "^0.0.7",
+        "terminal-kit": "^2.1.8",
+        "xterm": "^4.18.0"
+    }
+}
